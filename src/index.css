@@ -43,8 +43,8 @@ body::after {
   white-space: nowrap;
   pointer-events: none;
   z-index: 0;
-  color: #9333ea;
-  text-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  color: #8e78a3;
+  text-shadow: 0 0 20px rgba(162, 142, 180, 0.3);
 }
 
 /* Main content wrapper */
