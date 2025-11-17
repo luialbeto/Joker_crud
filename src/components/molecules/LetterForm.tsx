@@ -1,16 +1,16 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../ui/select";
 import {
   Form,
   FormControl,
@@ -18,8 +18,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+} from "../ui/form";
+import { Alert, AlertDescription } from "../ui/alert";
 
 const formSchema = z.object({
   recipientName: z.string().min(1, "Recipient name is required"),
@@ -80,7 +80,7 @@ export const LetterForm = ({ defaultValues, onSubmit, error, isLoading }: Props)
             <FormItem>
               <FormLabel>Address</FormLabel>
               <FormControl>
-                <Textarea placeholder="123 Main St, City, State ZIP" {...field} />
+                <Textarea placeholder="123 Main St, City, State, ZIP" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -94,7 +94,7 @@ export const LetterForm = ({ defaultValues, onSubmit, error, isLoading }: Props)
             <FormItem>
               <FormLabel>Tracking Number</FormLabel>
               <FormControl>
-                <Input placeholder="TRK-12345" {...field} />
+                <Input placeholder="TRK123456789" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -157,7 +157,7 @@ export const LetterForm = ({ defaultValues, onSubmit, error, isLoading }: Props)
           )}
         />
 
-        <div className="flex justify-end gap-2 pt-4">
+        <div className="flex justify-end gap-2">
           <Button type="submit" disabled={isLoading}>
             {isLoading ? "Saving..." : "Save Letter"}
           </Button>
